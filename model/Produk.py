@@ -1,7 +1,7 @@
 from main import db
 
-import locale
-locale.setlocale( locale.LC_ALL, 'id_ID' )
+# import locale
+# locale.setlocale( locale.LC_ALL, 'id_ID' )
 
 class Produk(db.Model):
     __tablename__ = 'produk'
@@ -22,7 +22,8 @@ class Produk(db.Model):
             {
                 "id": row.id,
                 "nama": row.nama,
-                "harga": locale.currency( row.harga, grouping=True )
+                # "harga": locale.currency( row.harga, grouping=True )
+                "harga": row.harga
             } 
         for row in Produk().query.all()]
 
