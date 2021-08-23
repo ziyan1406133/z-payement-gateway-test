@@ -111,7 +111,7 @@ def updateStatusOrder(data):
     payload = payload.text.encode('utf8')
     payload = json.loads(payload)
 
-    if payload["status_code"] == "407":
+    if payload["status_code"] == "407" or payload["status_code"] == "200":
 
         payload["buyer_id"] = data["buyer_id"]
         updated = Order().update(payload)
