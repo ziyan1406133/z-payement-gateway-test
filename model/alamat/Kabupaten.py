@@ -1,4 +1,4 @@
-from app import db
+from manage import db
 
 class Kabupaten(db.Model):
     __tablename__ = 'kabupaten'
