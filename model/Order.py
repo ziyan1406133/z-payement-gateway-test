@@ -1,7 +1,7 @@
 from main import db
 
 class Order(db.Model):
-    __tablename__ = 'order'
+    __tablename__ = 'order_tbl'
 
     id = db.Column(db.Integer, primary_key=True)    
     order_id = db.Column(db.String(255))
