@@ -55,14 +55,14 @@ class Order(db.Model):
             order.order_id = data["order_id"]
             order.buyer_id = data["buyer_id"]
             order.approval_code = data["approval_code"] if "approval_code" in data else None
-            order.transaction_time = data["transaction_time"]
-            order.gross_amount = float(data["gross_amount"])
-            order.currency = data["currency"]
-            order.payment_type = data["payment_type"]
-            order.signature_key = data["signature_key"]
-            order.status_code = data["status_code"]
-            order.transaction_id = data["transaction_id"]
-            order.transaction_status = data["transaction_status"]
+            order.transaction_time = data["transaction_time"] if "transaction_time" in data else None
+            order.gross_amount = float(data["gross_amount"]) if "gross_amount" in data else None
+            order.currency = data["currency"] if "currency" in data else None
+            order.payment_type = data["payment_type"] if "payment_type" in data else None
+            order.signature_key = data["signature_key"] if "signature_key" in data else None
+            order.status_code = data["status_code"] if "status_code" in data else None
+            order.transaction_id = data["transaction_id"] if "transaction_id" in data else None
+            order.transaction_status = data["transaction_status"] if "transaction_status" in data else None
             order.settlement_time = data["settlement_time"] if "settlement_time" in data else None
             print(order)
 

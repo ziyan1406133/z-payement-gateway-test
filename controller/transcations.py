@@ -85,6 +85,13 @@ def scanToken(data):
         data = snap.create_transaction(param)
         data["order_id"] = order_id
         data["buyer_id"] = user.id
+
+        create_new = Order().update(data)
+        if create_new:
+            response = createResponse(True, 200, "Status Order Berhasil Diperbaharui")
+        else:
+            response = createResponse(True, 200, "Status Order Gagal Diperbaharui", data)
+
         response = createResponse(True, 200, "Transaksi sedang diproses", data)
     except Exception as e:
         response = createResponse(False, 500, "Terjadi kesalahan", str(e))
@@ -115,7 +122,7 @@ def updateStatusOrder(data):
     else:
         response = createResponse(False, payload["status_code"], payload["status_message"], payload) 
 
-    return jsonify(response), response["status_code"]
+    return response
 
 def listOrder(user_id):
     data = Order().list(user_id)
@@ -125,3 +132,20 @@ def listOrder(user_id):
         response = createResponse(False, 404, "Data tidak ditemukan")
 
     return jsonify(response), response["status_code"]
+
+
+def homepage(args):
+    data = args.copy()
+    if "order_id" in args:
+        order = Order().query.filter_by(order_id="CustOrder-32626").first()
+        data["buyer_id"] = order.buyer_id
+
+        update = updateStatusOrder(data)
+        print(update)
+        if update["success"]:
+            return "Terima kasih telah berbelanja di sini. Transaksi telah diproses"
+        else:
+            return "Terjadi kesalahan ketika menyimpan data transaksi"
+
+    else:
+        return "Payment Gateway w/ Midtrans"

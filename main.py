@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
@@ -21,19 +21,16 @@ from controller import transcations, alamat, produk, user
 from model.alamat import Provinsi, Kabupaten, Kecamatan, Kelurahan
 from model import Produk, User, Order
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
-    return "Payment Gateway w/ Midtrans"
+    return transcations.homepage(request.args)
 
 ###
 
 #
 @app.route("/list-provinsi", methods=["GET"])
 def provinsi():
-    try:
-        return alamat.listProvinsi()
-    except Exception as e:
-        return str(e)
+    return alamat.listProvinsi()
 
 @app.route("/list-kabupaten/<int:prov_id>", methods=["GET"])
 def kabupaten(prov_id):
