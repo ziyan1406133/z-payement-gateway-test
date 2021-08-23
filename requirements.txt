@@ -23,3 +23,6 @@ Flask-Script==2.0.6
 
 ##api
 midtransclient==1.2.0
+
+##host
+gunicorn==20.1.0
