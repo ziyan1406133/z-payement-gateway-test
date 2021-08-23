@@ -27,7 +27,10 @@ def index():
 #
 @app.route("/list-provinsi", methods=["GET"])
 def provinsi():
-    return alamat.listProvinsi()
+    try:
+        return alamat.listProvinsi()
+    except Exception as e:
+        return str(e)
 
 @app.route("/list-kabupaten/<int:prov_id>", methods=["GET"])
 def kabupaten(prov_id):
