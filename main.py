@@ -9,13 +9,13 @@ app = Flask(__name__)
 CORS(app)
 
 # print(os.environ["DATABASE_URL"])
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://hgfcicgedydrjq:7ab96ad474cdb4e78fe0c70d0ab5fe00134ebac928500c4e0c65346d3d2622af@ec2-18-235-45-217.compute-1.amazonaws.com:5432/ded6sc2rb2b630"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://hgfcicgedydrjq:7ab96ad474cdb4e78fe0c70d0ab5fe00134ebac928500c4e0c65346d3d2622af@ec2-18-235-45-217.compute-1.amazonaws.com:5432/ded6sc2rb2b630"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-print(app.config['SQLALCHEMY_DATABASE_URI'])
+# print(app.config['SQLALCHEMY_DATABASE_URI'])
 
 from controller import transcations, alamat, produk, user
 from model.alamat import Provinsi, Kabupaten, Kecamatan, Kelurahan

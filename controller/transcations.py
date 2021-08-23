@@ -141,7 +141,7 @@ def homepage(args):
         data["buyer_id"] = order.buyer_id
 
         update = updateStatusOrder(data)
-        print(update)
+        # print(update)
         if update["success"]:
             return "Terima kasih telah berbelanja di sini. Transaksi telah diproses"
         else:
