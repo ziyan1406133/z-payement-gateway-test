@@ -20,7 +20,7 @@ def scanToken(data):
 
     snap = midtransclient.Snap(
         is_production=False,
-        server_key=os.environ['SERVER_KEY']
+        server_key="SB-Mid-server-FVAXT1qbO3l8I5y9ZqM4kNYE"
     )
 
     item_details = list()

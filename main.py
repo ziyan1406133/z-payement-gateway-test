@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-print(os.environ["DATABASE_URL"])
+# print(os.environ["DATABASE_URL"])
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://hgfcicgedydrjq:7ab96ad474cdb4e78fe0c70d0ab5fe00134ebac928500c4e0c65346d3d2622af@ec2-18-235-45-217.compute-1.amazonaws.com:5432/ded6sc2rb2b630"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -92,13 +92,6 @@ def updateStatusOrder():
 @app.route("/list-order/<int:user_id>", methods=["GET"])
 def listOrder(user_id):
     return transcations.listOrder(user_id)
-
-
-# @app.context_processor
-# def inject_stage_and_region():
-# 	return dict(MERCHANT_ID=os.environ["MERCHANT_ID"],
-# 		CLIENT_KEY=os.environ["CLIENT_KEY"],
-# 		SERVER_KEY=os.environ["SERVER_KEY"])
 
 if __name__ == "__main__":
     app.run();
