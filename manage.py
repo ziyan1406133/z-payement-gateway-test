@@ -94,5 +94,5 @@ def listOrder(user_id):
 # 		SERVER_KEY=os.environ["SERVER_KEY"])
 
 if __name__ == "__main__":
-    app.run()
+    app.listen(3000);
     db.create_all()
