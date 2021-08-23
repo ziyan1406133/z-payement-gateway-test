@@ -1,4 +1,4 @@
-from app import db
+from main import db
 
 import locale
 locale.setlocale( locale.LC_ALL, 'id_ID' )

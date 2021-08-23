@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aniso8601 = "==8.0.0"
+click = "==7.1.2"
+itsdangerous = "==1.1.0"
+pytz = "==2020.1"
+six = "==1.15.0"
+argparse = "==1.4.0"
+streamlit = "==0.79.0"
+python-dotenv = "==0.15.*"
+bcrypt = "==3.2.0"
+psycopg2 = "==2.8.4"
+midtransclient = "==1.2.0"
+gunicorn = "==20.1.0"
+Flask = "==1.1.*"
+Jinja2 = "==2.11.2"
+MarkupSafe = "==1.1.1"
+Werkzeug = "==1.0.1"
+Flask-Cors = "==3.0.10"
+Flask-SQLAlchemy = "===2.4.1"
+Flask-Migrate = "==2.5.2"
+Flask-Script = "==2.0.6"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

@@ -1,4 +1,4 @@
-from manage import db
+from main import db
 
 class Provinsi(db.Model):
     __tablename__ = 'provinsi'

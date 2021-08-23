@@ -1,4 +1,4 @@
-from manage import db
+from main import db
 
 class Order(db.Model):
     __tablename__ = 'order'

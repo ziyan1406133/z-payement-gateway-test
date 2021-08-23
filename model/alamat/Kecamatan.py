@@ -1,4 +1,4 @@
-from manage import db
+from main import db
 
 class Kecamatan(db.Model):
     __tablename__ = 'kecamatan'
